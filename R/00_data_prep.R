@@ -80,3 +80,60 @@ conf_intervals %>%
 # overall effects ---------------------------------------------------------
 
 lnRR_all <- read_csv("data-processed/lnRR_all.csv")
+
+
+calcCO2 <- lnRR_all %>% 
+  select(author, ends_with("CO2")) 
+
+
+
+calcCO2_1 <- calcCO2 %>% 
+  mutate(term1 = (1/sampling_variance_overall_CO2) * (lnRR_overall_CO2^2)) %>% 
+  mutate(term2 = (1/sampling_variance_overall_CO2) * lnRR_overall_CO2) %>% 
+  mutate(term3 = 1/sampling_variance_overall_CO2)
+
+calcCO2_2 <- calcCO2_1 %>% 
+  summarise(Q = sum(term1) - ((sum(term2))^2)/ sum(term3))
+
+Q_CO2 <- calcCO2_2[[1]]
+
+## Tau_sq is = 0 if Q < df (which is number of studies - 1), otherwise Tau_sq = (Q - df)/C, where C = sum(w) - sum(w^2)/sum(w)
+
+Tau_sq_CO2 <- (Q_CO2 - 9)/(sum(calcCO2_1$term3) - (sum(calcCO2_1$term3 ^ 2)/sum(calcCO2_1$term3)))
+
+calcCO2_3 <- calcCO2_1 %>% 
+  mutate(Q = Q_CO2,
+         tau_sq = Tau_sq_CO2)
+
+calcCO2_4 <- calcCO2_3 %>% 
+  mutate(w = (1/(sampling_variance_overall_CO2 + tau_sq))) %>% 
+  mutate(termT1 = w*lnRR_overall_CO2) %>% 
+  mutate(termT2 = w)
+
+T_CO2_weighted <- calcCO2_4 %>% 
+  summarise(T_weighted = sum(termT1)/sum(termT2))
+
+
+variance_CO2 <- calcCO2_4 %>% 
+  summarise(1/sum(w))
+
+lower_limit_CO2 <- T_CO2_weighted[[1]] - 1.96*(variance_CO2[[1]]^1/2)
+upper_limit_CO2 <- T_CO2_weighted[[1]] + 1.96*(variance_CO2[[1]]^1/2)
+
+conf_intervals_CO2 <- data.frame(lower_limit_CO2, upper_limit_CO2, T_CO2_weighted) %>% 
+  mutate(lnRR_type = "overall_CO2")
+
+conf_intervals_CO2_2 <- conf_intervals_CO2 %>% 
+  rename(lower_limit = lower_limit_CO2,
+         upper_limit = upper_limit_CO2,
+         T_weighted = T_weighted)
+
+
+overall_interaction <- bind_rows(conf_intervals, conf_intervals_CO2_2)
+
+overall_interaction %>% 
+  ggplot(aes(x = lnRR_type, y = T_weighted)) + geom_point() +
+  geom_errorbar(aes(ymin = lower_limit, ymax = upper_limit), width = 0.1) +
+  geom_hline(yintercept = 0) + theme_bw() + ylab("weighted mean lnRR") + xlab("lnRR type")
+
+ggsave("figures/calcification_weighted_lnRR.pdf")
