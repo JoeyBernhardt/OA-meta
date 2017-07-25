@@ -4,6 +4,7 @@
 
 library(tidyverse)
 library(janitor)
+library(purrr)
 
 # Under the random effects model we need to take account of two levels of
 # sampling, and two source of error. First, the true effect sizes θ are distributed
@@ -137,3 +138,64 @@ overall_interaction %>%
   geom_hline(yintercept = 0) + theme_bw() + ylab("weighted mean lnRR") + xlab("lnRR type")
 
 ggsave("figures/calcification_weighted_lnRR.pdf")
+
+### now bootstrap!
+
+times <- rep(10, 1000)
+
+ bootfunction <- function(n) {
+  thing <- sample_n(calc_ES_raw, size = n, replace= TRUE)
+ }
+ 
+ bootrapped_data_set <- times %>% 
+   map_df(bootfunction) 
+   
+ 
+ calc <- bootrapped_data_set %>% 
+   select(author, lnRR_interaction, sampling_variance) 
+ 
+ ## ok let's get Q
+ ## Q is sum(ES^2 *w_i) - (sum(ES*w_i)^2)/sum(w_i)
+ 
+ 
+ calc1 <- calc %>% 
+   mutate(term1 = (1/sampling_variance) * (lnRR_interaction^2)) %>% 
+   mutate(term2 = (1/sampling_variance) * lnRR_interaction) %>% 
+   mutate(term3 = 1/sampling_variance)
+ 
+ calc2 <- calc1 %>% 
+   summarise(Q = sum(term1) - ((sum(term2))^2)/ sum(term3))
+ 
+ Q <- calc2[[1]]
+ 
+ ## Tau_sq is = 0 if Q < df (which is number of studies - 1), so here Tau_sq is 0.
+ 
+ calc4 <- calc1 %>% 
+   mutate(Q = Q, 
+          tau_sq = 0)
+ 
+ calc5 <- calc4 %>% 
+   mutate(w = (1/(sampling_variance + tau_sq))) %>% 
+   mutate(termT1 = w*lnRR_interaction) %>% 
+   mutate(termT2 = w)
+ 
+ T_weighted <- calc5 %>% 
+   summarise(T_weighted = sum(termT1)/sum(termT2))
+ 
+ 
+ variance <- calc5 %>% 
+   summarise(1/sum(w))
+ 
+ lower_limit <- T_weighted[[1]] - 1.96*(variance[[1]]^1/2)
+ upper_limit <- T_weighted[[1]] + 1.96*(variance[[1]]^1/2)
+ 
+ conf_intervals <- data.frame(lower_limit, upper_limit, T_weighted) %>% 
+   mutate(lnRR_type = "interaction")
+ 
+ 
+ ## plot the weighted mean and 95% confidence intervals
+ conf_intervals %>% 
+   ggplot(aes(x = lnRR_type, y = T_weighted)) + geom_point() +
+   geom_errorbar(aes(ymin = lower_limit, ymax = upper_limit), width = 0.1)
+ 
+ 
