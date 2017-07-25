@@ -135,7 +135,57 @@ conf_intervals_CO2_2 <- conf_intervals_CO2 %>%
          T_weighted = T_weighted)
 
 
-overall_interaction <- bind_rows(conf_intervals, conf_intervals_CO2_2)
+
+# now food overall effect -------------------------------------------------
+
+calcfood <- lnRR_all %>% 
+  select(author, ends_with("food")) 
+
+
+
+calcfood_1 <- calcfood %>% 
+  mutate(term1 = (1/sampling_variance_overall_food) * (lnRR_overall_food^2)) %>% 
+  mutate(term2 = (1/sampling_variance_overall_food) * lnRR_overall_food) %>% 
+  mutate(term3 = 1/sampling_variance_overall_food)
+
+calcfood_2 <- calcfood_1 %>% 
+  summarise(Q = sum(term1) - ((sum(term2))^2)/ sum(term3))
+
+Q_food <- calcfood_2[[1]]
+
+## Tau_sq is = 0 if Q < df (which is number of studies - 1), otherwise Tau_sq = (Q - df)/C, where C = sum(w) - sum(w^2)/sum(w)
+
+Tau_sq_food <- (Q_food - 9)/(sum(calcfood_1$term3) - (sum(calcfood_1$term3 ^ 2)/sum(calcfood_1$term3)))
+
+calcfood_3 <- calcfood_1 %>% 
+  mutate(Q = Q_food,
+         tau_sq = Tau_sq_food)
+
+calcfood_4 <- calcfood_3 %>% 
+  mutate(w = (1/(sampling_variance_overall_food + tau_sq))) %>% 
+  mutate(termT1 = w*lnRR_overall_food) %>% 
+  mutate(termT2 = w)
+
+T_food_weighted <- calcfood_4 %>% 
+  summarise(T_weighted = sum(termT1)/sum(termT2))
+
+
+variance_food <- calcfood_4 %>% 
+  summarise(1/sum(w))
+
+lower_limit_food <- T_food_weighted[[1]] - 1.96*(variance_food[[1]]^1/2)
+upper_limit_food <- T_food_weighted[[1]] + 1.96*(variance_food[[1]]^1/2)
+
+conf_intervals_food <- data.frame(lower_limit_food, upper_limit_food, T_food_weighted) %>% 
+  mutate(lnRR_type = "overall_food")
+
+conf_intervals_food_2 <- conf_intervals_food %>% 
+  rename(lower_limit = lower_limit_food,
+         upper_limit = upper_limit_food,
+         T_weighted = T_weighted)
+
+
+overall_interaction <- bind_rows(conf_intervals, conf_intervals_CO2_2, conf_intervals_food_2)
 
 overall_interaction %>% 
   ggplot(aes(x = lnRR_type, y = T_weighted)) + geom_point() +
