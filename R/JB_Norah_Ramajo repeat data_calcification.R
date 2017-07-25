@@ -106,11 +106,15 @@ wide3 <- lnRR_interaction %>%
          n_AB = n_elevatedlow)
 
 
-wide4 <- wide3 %>% 
-  mutate(lnRR_overall_CO2 = log(A + AB) - log(C + B))
-
-lnRR_all <- wide4 %>% 
-  mutate(sampling_variance_overall_CO2 = (((1/((A + B))^2) * ((s_A^2/n_A) + (s_AB^2/n_AB))) + (((1/(C + B))^2) * ((s_C^2/n_C) + (s_B^2)/n_B)))) 
+lnRR_all <- wide3 %>% 
+  mutate(lnRR_overall_CO2 = log(A + AB) - log(C + B)) %>% 
+  mutate(sampling_variance_overall_CO2 = (((1/((A + B))^2) * ((s_A^2/n_A) +
+                                        (s_AB^2/n_AB))) + (((1/(C + B))^2) *
+                                        ((s_C^2/n_C) + (s_B^2)/n_B)))) %>% 
+  mutate(lnRR_overall_food = log(B + AB) - log(C + A)) %>% 
+  mutate(sampling_variance_overall_food = (((1/((A + B))^2) * ((s_B^2/n_B) +
+                                          (s_AB^2/n_AB))) + (((1/(C + A))^2) *
+                                          ((s_C^2/n_C) + (s_A^2)/n_A))))
 
 
 write_csv(lnRR_all, "data-processed/lnRR_all.csv")

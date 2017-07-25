@@ -5,6 +5,11 @@
 library(tidyverse)
 library(janitor)
 library(purrr)
+library(broom)
+library(dplyr)
+library(tidyr)
+library(modelr)
+library(readr)
 
 # Under the random effects model we need to take account of two levels of
 # sampling, and two source of error. First, the true effect sizes θ are distributed
@@ -139,7 +144,9 @@ overall_interaction %>%
 
 ggsave("figures/calcification_weighted_lnRR.pdf")
 
-### now bootstrap!
+
+# now bootstrap! ----------------------------------------------------------
+
 
 times <- rep(10, 1000)
 
@@ -198,4 +205,10 @@ times <- rep(10, 1000)
    ggplot(aes(x = lnRR_type, y = T_weighted)) + geom_point() +
    geom_errorbar(aes(ymin = lower_limit, ymax = upper_limit), width = 0.1)
  
+ ## with broom
+ 
+ calc_ES_raw %>% 
+   bootstrap(100) %>% View
+ 
+
  

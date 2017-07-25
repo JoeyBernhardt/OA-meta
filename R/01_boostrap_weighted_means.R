@@ -54,7 +54,7 @@ bs_lnRR <- sample_size %>%
 
 bs_lnRR %>% 
   group_by(lnRR_type) %>% 
-  summarise_each(funs(mean, std.error), T_weighted, lower_limit, upper_limit) %>% View
+  summarise_each(funs(mean, std.error), T_weighted) %>%
   ggplot(aes(x = lnRR_type, y = mean)) + geom_point() +
   geom_errorbar(aes(ymin = mean - 1.96*std.error, ymax = mean + 1.96*std.error), width = 0.1) +
   geom_hline(yintercept = 0)
