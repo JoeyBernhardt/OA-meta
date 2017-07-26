@@ -1,7 +1,3 @@
-
-# Figuring out how to do a factorial meta-analyis -------------------------
-## Code written by JB, last updated July 20 2017
-
 library(tidyverse)
 library(janitor)
 library(purrr)
@@ -10,6 +6,7 @@ library(dplyr)
 library(tidyr)
 library(modelr)
 library(readr)
+library(ggplot2)
 
 # Under the random effects model we need to take account of two levels of
 # sampling, and two source of error. First, the true effect sizes θ are distributed
@@ -32,7 +29,7 @@ library(readr)
 
 # interactive effects -----------------------------------------------------
 
-calc_ES_raw <- read_csv("data-processed/calcification_interaction_effect_sizes.csv")
+calc_ES_raw <- read_csv("data-processed/growth_lnRR_all.csv")
 
 calc <- calc_ES_raw %>% 
   select(author, lnRR_interaction, sampling_variance_interaction) 
@@ -85,7 +82,7 @@ conf_intervals %>%
 
 # overall effects ---------------------------------------------------------
 
-lnRR_all <- read_csv("data-processed/lnRR_all.csv")
+lnRR_all <- read_csv("data-processed/growth_lnRR_all.csv")
 
 
 calcCO2 <- lnRR_all %>% 
@@ -234,7 +231,7 @@ se_food <- (eq7_T1[[1]] * eq7_B[[1]])^0.5
 
 overall_interaction %>% 
   ggplot(aes(x = lnRR_type, y = T_weighted)) + geom_point() +
-  geom_errorbar(aes(ymin = T_weighted - 1.96*se[[1]], ymax = T_weighted + 1.96*se[[1]]), width = 0.1) +
+  geom_errorbar(aes(ymin = T_weighted - 1.96*se_food[[1]], ymax = T_weighted + 1.96*se_food[[1]]), width = 0.1) +
   geom_hline(yintercept = 0) + theme_bw() + ylab("weighted mean lnRR") + xlab("lnRR type")
 
 
@@ -268,13 +265,49 @@ eq7_B_interaction <- eq7_T2_interaction %>%
 
 se_interaction <- (eq7_T1_interaction[[1]] * eq7_B_interaction[[1]])^0.5
 
+
+# small sample size correction for CO2 overall ----------------------------
+
+eq7_T1_CO2 <- calcCO2_4 %>% 
+  summarise(eq7_T1 = 1/sum(w)) 
+
+## ok now we need the degrees of freedom in the individual studies!
+
+sample_sizes_CO2 <- lnRR_all %>% 
+  select(starts_with("n"), author) %>% 
+  mutate(df = n_B + n_C - 2)
+
+calc6_CO2 <- left_join(calcCO2_4, sample_sizes_CO2)
+
+sum_wj_CO2 <- calc6_CO2 %>% 
+  summarise(sum(w))
+
+eq7_T2_CO2 <- calc6_CO2 %>% 
+  mutate(T2.1 = 1/df) %>% 
+  mutate(T2.2 = (w/(1/sampling_variance_overall_CO2))^2)  %>% 
+  mutate(T3.1 = w*(sum_wj_CO2[[1]] - w)) %>% 
+  mutate(T3.2 = sum_wj_CO2[[1]]^2) %>% 
+  mutate(T3 = T3.1/T3.2)
+
+eq7_B_CO2 <- eq7_T2_CO2 %>% 
+  summarise(TermB = sum(T2.1 *T2.2 * T3)*4) %>% 
+  mutate(termb = 1 + TermB)
+
+
+se_CO2 <- (eq7_T1_CO2[[1]] * eq7_B_CO2[[1]])^0.5
+
+
 overall_interaction2 <- overall_interaction %>% 
   mutate(se_small_sample = NA) %>% 
   mutate(se_small_sample = ifelse(lnRR_type == "interaction", se_interaction[[1]], se_small_sample)) %>%
-  mutate(se_small_sample = ifelse(lnRR_type == "overall_food", se_food[[1]], se_small_sample)) 
+  mutate(se_small_sample = ifelse(lnRR_type == "overall_food", se_food[[1]], se_small_sample)) %>% 
+  mutate(se_small_sample = ifelse(lnRR_type == "overall_CO2", se_CO2[[1]], se_small_sample)) 
+
+write_csv(overall_interaction2, "data-processed/weighted_mean_growth.csv")
 
 
 overall_interaction2 %>% 
   ggplot(aes(x = lnRR_type, y = T_weighted)) + geom_point() +
   geom_errorbar(aes(ymin = T_weighted - 1.96*se_small_sample, ymax = T_weighted + 1.96*se_small_sample), width = 0.1) +
   geom_hline(yintercept = 0) + theme_bw() + ylab("weighted mean lnRR") + xlab("lnRR type")
+ggsave("figures/weighted_mean_growth.pdf")

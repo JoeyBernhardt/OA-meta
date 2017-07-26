@@ -52,6 +52,8 @@ sample_size <- rep(10, 10000)
 bs_lnRR <- sample_size %>% 
   map_df(weighted_means, .id = "id_number") 
 
+write_csv("data-processed/bootstrapped_lnRR.csv")
+
 bs_lnRR %>% 
   group_by(lnRR_type) %>% 
   summarise_each(funs(mean, std.error), T_weighted) %>%
