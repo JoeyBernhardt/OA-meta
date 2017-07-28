@@ -29,7 +29,12 @@ library(ggplot2)
 
 # interactive effects -----------------------------------------------------
 
-calc_ES_raw <- read_csv("data-processed/growth_lnRR_all.csv")
+calc_ES_raw_growth <- read_csv("data-processed/growth_lnRR_all.csv")
+
+calc_ES_raw_growth %>% 
+  ggplot(aes(x = author, y = lnRR_overall_CO2)) + geom_point() +
+  geom_hline(yintercept = 0) + theme_bw()
+
 
 calc <- calc_ES_raw %>% 
   select(author, lnRR_interaction, sampling_variance_interaction) 

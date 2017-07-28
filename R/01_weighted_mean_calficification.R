@@ -29,10 +29,17 @@ library(ggplot2)
 
 # interactive effects -----------------------------------------------------
 
-calc_ES_raw <- read_csv("data-processed/calcification_lnRR_all.csv")
+calc_ES_raw_calc <- read_csv("data-processed/calcification_lnRR_all.csv")
+
+calc_ES_raw_calc %>% 
+  ggplot(aes(x = author, y = lnRR_overall_CO2)) + geom_point() +
+  geom_hline(yintercept = 0) + theme_bw()
 
 calc <- calc_ES_raw %>% 
   select(author, lnRR_interaction, sampling_variance_interaction) 
+
+
+
 
 ## ok let's get Q
 ## Q is sum(ES^2 *w_i) - (sum(ES*w_i)^2)/sum(w_i)
@@ -197,7 +204,7 @@ overall_interaction %>%
   geom_errorbar(aes(ymin = lower_limit, ymax = upper_limit), width = 0.1) +
   geom_hline(yintercept = 0) + theme_bw() + ylab("weighted mean lnRR") + xlab("lnRR type")
 
-ggsave("figures/calcification_weighted_lnRR.pdf")
+# ggsave("figures/calcification_weighted_lnRR.pdf")
 
 
 # now onto eq 7 in Hedges (SE small sample correction) ----------------------------------------------------------
