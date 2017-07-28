@@ -12,9 +12,9 @@ gro1 <- growth %>%
   clean_names() 
 
 gro <- gro1 %>% 
-   # filter(author == "Pansch") %>% 
-  filter(unit != "dry weight - Tjarno (mg)") %>% 
-  filter(unit != "size- Kiel (mm)")
+  #  # filter(author == "Pansch") %>% 
+  # filter(unit != "dry weight - Tjarno (mg)") %>% 
+  # filter(unit != "size- Kiel (mm)")
 
 
 ambienthigh <- gro %>% 

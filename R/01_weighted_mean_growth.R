@@ -44,15 +44,19 @@ calc1 <- calc %>%
   mutate(term3 = 1/sampling_variance_interaction)
 
 calc2 <- calc1 %>% 
-  summarise(Q = sum(term1) - ((sum(term2))^2)/ sum(term3))
+  summarise(Q = sum(term1) - ((sum(term2))^2)/ sum(term3),
+            C_term1 = sum(1/sampling_variance_interaction),
+            C_term2 = sum((1/sampling_variance_interaction)^2)) 
 
-Q <- calc2[[1]]
+df <- 12 - 1
+C <- calc2[["C_term1"]] - (calc2[["C_term1"]]/calc2[["C_term1"]])
+Q <- calc2[["Q"]]
+tau_sq <- (Q - df)/C
 
-## Tau_sq is = 0 if Q < df (which is number of studies - 1), so here Tau_sq is 0.
 
 calc4 <- calc1 %>% 
   mutate(Q = Q, 
-         tau_sq = 0)
+         tau_sq = tau_sq)
 
 calc5 <- calc4 %>% 
   mutate(w = (1/(sampling_variance_interaction + tau_sq))) %>% 
@@ -102,7 +106,7 @@ Q_CO2 <- calcCO2_2[[1]]
 
 ## Tau_sq is = 0 if Q < df (which is number of studies - 1), otherwise Tau_sq = (Q - df)/C, where C = sum(w) - sum(w^2)/sum(w)
 
-Tau_sq_CO2 <- (Q_CO2 - 9)/(sum(calcCO2_1$term3) - (sum(calcCO2_1$term3 ^ 2)/sum(calcCO2_1$term3)))
+Tau_sq_CO2 <- (Q_CO2 - 12)/(sum(calcCO2_1$term3) - (sum(calcCO2_1$term3 ^ 2)/sum(calcCO2_1$term3)))
 
 calcCO2_3 <- calcCO2_1 %>% 
   mutate(Q = Q_CO2,
@@ -153,7 +157,7 @@ Q_food <- calcfood_2[[1]]
 
 ## Tau_sq is = 0 if Q < df (which is number of studies - 1), otherwise Tau_sq = (Q - df)/C, where C = sum(w) - sum(w^2)/sum(w)
 
-Tau_sq_food <- (Q_food - 9)/(sum(calcfood_1$term3) - (sum(calcfood_1$term3 ^ 2)/sum(calcfood_1$term3)))
+Tau_sq_food <- (Q_food - 12)/(sum(calcfood_1$term3) - (sum(calcfood_1$term3 ^ 2)/sum(calcfood_1$term3)))
 
 calcfood_3 <- calcfood_1 %>% 
   mutate(Q = Q_food,
