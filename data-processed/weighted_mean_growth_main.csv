@@ -1,0 +1,4 @@
+"lower_limit","upper_limit","T_weighted","lnRR_type","se_small_sample"
+0.0409839,0.0417541,0.041369,"interaction",0.00826399
+-0.0262989,-0.0261045,-0.0262017,"overall_CO2",0.00415273
+-0.900566,-0.884672,-0.892619,"overall_food",0.00964645
