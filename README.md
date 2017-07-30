@@ -1,5 +1,7 @@
 # OA-meta
-This repo contains data and code for a meta-analysis of food and ocean acidification impacts on marine organisms
+This repo contains data and code for a factorial meta-analysis of food and ocean acidification impacts on marine organisms.
+
+Methods for calculating weighted effect sizes are from [Borenstein et al.](https://www.meta-analysis.com/downloads/Meta%20Analysis%20Fixed%20vs%20Random%20effects.pdf), and standard errors are calculated using corrections for small sample sizes in [Hedges et al. 1999, Ecology](http://onlinelibrary.wiley.com/doi/10.1890/0012-9658(1999)080%5B1150:TMAORR%5D2.0.CO;2/abstract)
 
 There are 4 versions of all the scripts, figures, datasets.
 
