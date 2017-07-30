@@ -1,0 +1,61 @@
+Data_entry_person,Observation_ID,study,Paper_no,Author,Year,Taxon,Taxon.big,"CO2 treatment (control, uatm)","CO2 treatment (elevated, uatm)",DeltaCO2,DeltapH,Unit,Treatment,CO2,Food.supply,Food.relative,Food.relative score,Mean,SE,SD,95CI,N
+Norah,65,15,7,Comeau,2013,coral,coral,377,708.5,331.5,0.25,calcification per unit biomass: CaCO3 day-1 mg-1,AmbientLow,Ambient,Low,starvation,0,0.215082,0.039344,0.096372724,,6
+Norah,65,15,7,Comeau,2013,coral,coral,377,708.5,331.5,0.25,calcification per unit biomass: CaCO3 day-1 mg-1,ElevatedLow,Elevated,Low,starvation,0,0.16918,0.020984,0.051400093,,6
+Norah,67,17,7,Comeau,2013,coral,coral,377,708.5,331.5,0.25,calcification per unit biomass: CaCO3 day-1 mg-2,AmbientHigh,Ambient,High,ad libitum,4,0.110164,0.010492,0.025700046,,6
+Norah,67,17,7,Comeau,2013,coral,coral,377,708.5,331.5,0.25,calcification per unit biomass: CaCO3 day-1 mg-2,ElevatedHigh,Elevated,High,ad libitum,4,0.215082,0.039344,0.096372724,,6
+Norah,59,11,5,Crook_1,2013,coral,coral,410,770,360,0.24,skeleton dry weight (mg),AmbientLow,Ambient,Low,low maintenance,1,10.98214,0.535714,2.512721388,,22
+Norah,60,12,5,Crook_1,2013,coral,coral,410,770,360,0.24,skeleton dry weight (mg),AmbientHigh,Ambient,High,plentiful,3,48.8,3.466667,14.70782246,,18
+Norah,59,11,5,Crook_1,2013,coral,coral,410,770,360,0.24,skeleton dry weight (mg),ElevatedLow,Elevated,Low,low maintenance,1,5.625,0.535714,2.834732036,,28
+Norah,60,12,5,Crook_1,2013,coral,coral,410,770,360,0.24,skeleton dry weight (mg),ElevatedHigh,Elevated,High,plentiful,3,36.8,3.466667,16.62555088,,23
+Norah,61,11,5,Crook_2,2013,coral,coral,410,1220,810,0.43,skeleton dry weight (mg),AmbientLow,Ambient,Low,low maintenance,1,10.93333,1.6,7.504665216,,22
+Norah,62,12,5,Crook_2,2013,coral,coral,410,1220,810,0.43,skeleton dry weight (mg),AmbientHigh,Ambient,High,plentiful,3,48.8,3.466667,14.70782246,,18
+Norah,61,11,5,Crook_2,2013,coral,coral,410,1220,810,0.43,skeleton dry weight (mg),ElevatedLow,Elevated,Low,low maintenance,1,6.964286,0.267857,1.312225948,,24
+Norah,62,12,5,Crook_2,2013,coral,coral,410,1220,810,0.43,skeleton dry weight (mg),ElevatedHigh,Elevated,High,plentiful,3,37.86667,2.933333,13.75855133,,22
+Norah,75,27,11,Drenkard,2013,Coral,coral,398,1278,880,0.4,Corralite weight (ug),AmbientLow,Ambient,Low,starvation,0,350.1779,10.67616,18.49165155,,3
+Norah,76,28,11,Drenkard,2013,Coral,coral,443,1344,901,0.4,Corralite weight (ug),AmbientHigh,Ambient,High,fed,3,546.6192,19.21708,33.28495893,,3
+Norah,75,27,11,Drenkard,2013,Coral,coral,398,1278,880,0.4,Corralite weight (ug),ElevatedLow,Elevated,Low,starvation,0,249.8221,6.405694,11.09498747,,3
+Norah,76,28,11,Drenkard,2013,Coral,coral,443,1344,901,0.4,Corralite weight (ug),ElevatedHigh,Elevated,High,fed,3,420.6406,29.89324,51.77661048,,3
+Norah,63,13,6,Edmunds,2011,coral,coral,412.5,784.6,372.1,0.26,calcification per unit cm: mg/cm2*d,AmbientLow,Ambient,Low,starvation,0,0.9677,,0.0889,,10
+Norah,64,14,6,Edmunds,2011,coral,coral,412.5,784.6,372.1,0.26,calcification per unit cm: mg/cm2*d,AmbientHigh,Ambient,High,ad libitum,4,1.5,,0.3,,10
+Norah,63,13,6,Edmunds,2011,coral,coral,412.5,784.6,372.1,0.26,calcification per unit cm: mg/cm2*d,ElevatedLow,Elevated,Low,starvation,0,1.02,,0.23,,10
+Norah,64,14,6,Edmunds,2011,coral,coral,412.5,784.6,372.1,0.26,calcification per unit cm: mg/cm2*d,ElevatedHigh,Elevated,High,ad libitum,4,1.34,,0.36,,10
+Joey,5,5,3,Hettinger,2013,oyster,bivalve,494,1065,571,0.3,total dry weight (ug/larva),AmbientHigh,Ambient,High,natural,3,4.210178034,0.08467,0.19,,5
+Joey,7,7,3,Hettinger,2013,oyster,bivalve,539,1094,555,0.3,total dry weight (ug/larva),AmbientLow,Ambient,Low,one tenth,1,3.12294935,0.084724,0.19,,5
+Joey,5,5,3,Hettinger,2013,oyster,bivalve,494,1065,571,0.3,total dry weight (ug/larva),ElevatedHigh,Elevated,High,natural,3,3.8993252,0.0605,0.135282113,,5
+Joey,7,7,3,Hettinger,2013,oyster,bivalve,539,1094,555,0.3,total dry weight (ug/larva),ElevatedLow,Elevated,Low,one tenth,1,2.921063328,0.290366602,0.649279461,,5
+Norah,77,29,12,Melzner_1,2011,Mussel,bivalve,542.8,1125.1,582.3,0.31,Shell mass growth (mg),AmbientLow,Ambient,Low,low no filter,1,24.3,2.4,4.8,,4
+Norah,77,29,12,Melzner_1,2011,Mussel,bivalve,542.8,1125.1,582.3,0.31,Shell mass growth (mg),ElevatedLow,Elevated,Low,low no filter,1,21.8,5.6,11.2,,4
+Norah,78,30,12,Melzner_1,2011,Mussel,bivalve,523.1,1174.4,651.3,0.32,Shell mass growth (mg),AmbientHigh,Ambient,High,natural,2,70.4,30.95,61.9,,4
+Norah,78,30,12,Melzner_1,2011,Mussel,bivalve,523.1,1174.4,651.3,0.32,Shell mass growth (mg),ElevatedHigh,Elevated,High,natural,2,72.6,26.5,53,,4
+Norah,79,29,12,Melzner_2,2011,Mussel,bivalve,542.8,2309.4,1766.6,0.61,Shell mass growth (mg),AmbientLow,Ambient,Low,low no filter,1,24.3,2.4,4.8,,4
+Norah,79,29,12,Melzner_2,2011,Mussel,bivalve,542.8,2309.4,1766.6,0.61,Shell mass growth (mg),ElevatedLow,Elevated,Low,low no filter,1,39.5,6.75,13.5,,4
+Norah,80,30,12,Melzner_2,2011,Mussel,bivalve,523.1,2585.7,2062.6,0.62,Shell mass growth (mg),AmbientHigh,Ambient,High,natural,2,70.4,30.95,61.9,,4
+Norah,80,30,12,Melzner_2,2011,Mussel,bivalve,523.1,2585.7,2062.6,0.62,Shell mass growth (mg),ElevatedHigh,Elevated,High,natural,2,39.9,10.05,20.1,,4
+Norah,81,29,12,Melzner_3,2011,Mussel,bivalve,542.8,3957.6,3414.8,0.82,Shell mass growth (mg),AmbientLow,Ambient,Low,low no filter,1,24.3,2.4,4.8,,4
+Norah,81,29,12,Melzner_3,2011,Mussel,bivalve,542.8,3957.6,3414.8,0.82,Shell mass growth (mg),ElevatedLow,Elevated,Low,low no filter,1,8.9,4.1,8.2,,4
+Norah,82,30,12,Melzner_3,2011,Mussel,bivalve,523.1,3908.2,3385.1,0.86,Shell mass growth (mg),AmbientHigh,Ambient,High,natural,2,70.4,30.95,61.9,,4
+Norah,82,30,12,Melzner_3,2011,Mussel,bivalve,523.1,3908.2,3385.1,0.86,Shell mass growth (mg),ElevatedHigh,Elevated,High,natural,2,44.2,9.4,18.8,,4
+Kat,70,19,8,Pansch_2,2014,Barnacle,crustacean,526.4,1141.7,615.3,0.28,Calcification Rate- Tjarno (umol CaCO3  gDW-1  h-1 ),AmbientHigh,Ambient,High,one fifth,1,1.375634518,0.352222107,0.862764439,0.69035533,6
+Kat,70,19,8,Pansch_2,2014,Barnacle,crustacean,526.4,1141.7,615.3,0.28,Calcification Rate- Tjarno (umol CaCO3  gDW-1  h-1 ),ElevatedHigh,Elevated,High,one fifth,1,1.025380711,0.170931317,0.418694507,0.335025381,6
+Kat,68,18,8,Pansch_2,2014,Barnacle,crustacean,526.4,3255.9,2729.5,0.33,Calcification Rate- Tjarno (umol CaCO3  gDW-1  h-1 ),AmbientLow,Ambient,Low,one fifth,1,1.38071066,0.258986843,0.634385617,0.507614213,6
+Kat,68,18,8,Pansch_2,2014,Barnacle,crustacean,526.4,3255.9,2729.5,0.33,Calcification Rate- Tjarno (umol CaCO3  gDW-1  h-1 ),ElevatedLow,Elevated,Low,one fifth,1,1.012690355,0.265461515,0.650245257,0.520304569,6
+Kat,71,19,8,Pansch_4,2014,Barnacle,crustacean,596.8,1104.1,507.3,0.76,Calcification Rate- Tjarno (umol CaCO3  gDW-1  h-1 ),AmbientHigh,Ambient,High,full,3,1.375634518,0.352222107,0.862764439,0.69035533,6
+Kat,71,19,8,Pansch_4,2014,Barnacle,crustacean,596.8,1104.1,507.3,0.76,Calcification Rate- Tjarno (umol CaCO3  gDW-1  h-1 ),ElevatedHigh,Elevated,High,full,3,0.631193084,0.245389457,0.601078959,0.480963337,6
+Kat,69,18,8,Pansch_4,2014,Barnacle,crustacean,596.8,3164.6,2567.8,0.8,Calcification Rate- Tjarno (umol CaCO3  gDW-1  h-1 ),AmbientLow,Ambient,Low,full,3,1.38071066,0.258986843,0.634385617,0.507614213,6
+Kat,69,18,8,Pansch_4,2014,Barnacle,crustacean,596.8,3164.6,2567.8,0.8,Calcification Rate- Tjarno (umol CaCO3  gDW-1  h-1 ),ElevatedLow,Elevated,Low,full,3,0.220993201,0.11104486,0.272003246,0.217647926,6
+Kat,72,22,9,Ramajo,2016,Scallop,crustacean,405,1304,899,0.45,Calcification Rate (umol CaCO3  g-1  h-1 ),AmbientLow,Ambient,Low,2 % food,1,3.722628,2.408759,4.172093,,3
+Kat,74,24,9,Ramajo,2016,Scallop,crustacean,552,1519,967,0.45,Calcification Rate (umol CaCO3  g-1  h-1 ),AmbientHigh,Ambient,High,full,3,9.251825,2.354015,4.077273,,3
+Kat,72,22,9,Ramajo,2016,Scallop,crustacean,405,1304,899,0.45,Calcification Rate (umol CaCO3  g-1  h-1 ),ElevatedLow,Elevated,Low,2 % food,1,7.773723,3.832117,6.637421,,3
+Kat,74,24,9,Ramajo,2016,Scallop,crustacean,552,1519,967,0.45,Calcification Rate (umol CaCO3  g-1  h-1 ),ElevatedHigh,Elevated,High,full,3,17.90146,4.708029,8.154546,,3
+Joey,50,8,4,Thomsen_1,2013,Mussel,bivalve,380,1120,740,0.31,calcification per unit biomass: mg/mg*d,AmbientLow,Ambient,Low,one tenth,1,0.198586239,,0.106786051,,7
+Joey,52,10,4,Thomsen_1,2013,Mussel,bivalve,380,1120,740,0.31,calcification per unit biomass: mg/mg*d,AmbientHigh,Ambient,High,full food,3,2.407822809,,1.155136664,,7
+Joey,50,8,4,Thomsen_1,2013,Mussel,bivalve,380,1120,740,0.31,calcification per unit biomass: mg/mg*d,ElevatedLow,Elevated,Low,one tenth,1,0.299811499,,0.097078222,,7
+Joey,52,10,4,Thomsen_1,2013,Mussel,bivalve,380,1120,740,0.31,calcification per unit biomass: mg/mg*d,ElevatedHigh,Elevated,High,full food,3,1.85862394,,1.252214892,,7
+Joey,53,8,4,Thomsen_2,2013,Mussel,bivalve,380,2400,2020,0.61,calcification per unit biomass: mg/mg*d,AmbientLow,Ambient,Low,one tenth,1,0.198586239,,0.106786051,,7
+Joey,55,10,4,Thomsen_2,2013,Mussel,bivalve,380,2400,2020,0.61,calcification per unit biomass: mg/mg*d,AmbientHigh,Ambient,High,full food,3,2.407822809,,1.155136664,,7
+Joey,53,8,4,Thomsen_2,2013,Mussel,bivalve,380,2400,2020,0.61,calcification per unit biomass: mg/mg*d,ElevatedLow,Elevated,Low,one tenth,1,0.1275,,0.071,,7
+Joey,55,10,4,Thomsen_2,2013,Mussel,bivalve,380,2400,2020,0.61,calcification per unit biomass: mg/mg*d,ElevatedHigh,Elevated,High,full food,3,1.843355325,,0.893119698,,7
+Joey,56,8,4,Thomsen_3,2013,Mussel,bivalve,380,4000,3620,0.82,calcification per unit biomass: mg/mg*d,AmbientLow,Ambient,Low,one tenth,1,0.198586239,,0.106786051,,7
+Joey,58,10,4,Thomsen_3,2013,Mussel,bivalve,380,4000,3620,0.82,calcification per unit biomass: mg/mg*d,AmbientHigh,Ambient,High,full food,3,2.407822809,,1.155136664,,7
+Joey,56,8,4,Thomsen_3,2013,Mussel,bivalve,380,4000,3620,0.82,calcification per unit biomass: mg/mg*d,ElevatedLow,Elevated,Low,one tenth,1,0.1033,,0.0889,,7
+Joey,58,10,4,Thomsen_3,2013,Mussel,bivalve,380,4000,3620,0.82,calcification per unit biomass: mg/mg*d,ElevatedHigh,Elevated,High,full food,3,1.439773798,,0.718378888,,7
