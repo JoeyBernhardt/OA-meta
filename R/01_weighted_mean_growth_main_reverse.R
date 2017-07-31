@@ -29,17 +29,15 @@ library(ggplot2)
 
 # interactive effects -----------------------------------------------------
 
-calc_ES_raw_calc <- read_csv("data-processed/calcification_main_lnRR_all_reverse.csv")
+calc_ES_raw_growth <- read_csv("data-processed/growth_main_lnRR_all_reverse.csv")
 
-calc_ES_raw_calc %>% 
+calc_ES_raw_growth %>% 
   ggplot(aes(x = author, y = lnRR_overall_CO2)) + geom_point() +
   geom_hline(yintercept = 0) + theme_bw()
 
-calc <- calc_ES_raw_calc %>% 
+
+calc <- calc_ES_raw_growth %>% 
   select(author, lnRR_interaction, sampling_variance_interaction) 
-
-
-
 
 ## ok let's get Q
 ## Q is sum(ES^2 *w_i) - (sum(ES*w_i)^2)/sum(w_i)
@@ -55,12 +53,10 @@ calc2 <- calc1 %>%
             C_term1 = sum(1/sampling_variance_interaction),
             C_term2 = sum((1/sampling_variance_interaction)^2)) 
 
-df <- 16 - 1
+df <- 31 - 1
 C <- calc2[["C_term1"]] - (calc2[["C_term1"]]/calc2[["C_term1"]])
 Q <- calc2[["Q"]]
 tau_sq <- (Q - df)/C
-tau_sq <- 0
-## if Q is less than df, then tau squared is 0
 
 
 calc4 <- calc1 %>% 
@@ -95,7 +91,7 @@ conf_intervals %>%
 
 # overall effects ---------------------------------------------------------
 
-lnRR_all <- read_csv("data-processed/calcification_main_lnRR_all_reverse.csv")
+lnRR_all <- read_csv("data-processed/growth_main_lnRR_all_reverse.csv")
 
 
 calcCO2 <- lnRR_all %>% 
@@ -115,7 +111,7 @@ Q_CO2 <- calcCO2_2[[1]]
 
 ## Tau_sq is = 0 if Q < df (which is number of studies - 1), otherwise Tau_sq = (Q - df)/C, where C = sum(w) - sum(w^2)/sum(w)
 
-
+df <- 32 -1
 Tau_sq_CO2 <- (Q_CO2 - df)/(sum(calcCO2_1$term3) - (sum(calcCO2_1$term3 ^ 2)/sum(calcCO2_1$term3)))
 
 calcCO2_3 <- calcCO2_1 %>% 
@@ -199,13 +195,6 @@ conf_intervals_food_2 <- conf_intervals_food %>%
 
 overall_interaction <- bind_rows(conf_intervals, conf_intervals_CO2_2, conf_intervals_food_2)
 
-overall_interaction %>% 
-  ggplot(aes(x = lnRR_type, y = T_weighted)) + geom_point() +
-  geom_errorbar(aes(ymin = lower_limit, ymax = upper_limit), width = 0.1) +
-  geom_hline(yintercept = 0) + theme_bw() + ylab("weighted mean lnRR") + xlab("lnRR type")
-
-# ggsave("figures/calcification_weighted_lnRR.pdf")
-
 
 # now onto eq 7 in Hedges (SE small sample correction) ----------------------------------------------------------
 
@@ -258,7 +247,7 @@ eq7_T1_interaction <- calc5 %>%
 
 sample_sizes_interaction <- lnRR_all %>% 
   select(starts_with("n"), author) %>% 
-  mutate(df = n_AB + n_C - 2)
+  mutate(df = n_B + n_C - 2)
 
 calc6 <- left_join(calc5, sample_sizes_interaction)
 
@@ -289,7 +278,7 @@ eq7_T1_CO2 <- calcCO2_4 %>%
 
 sample_sizes_CO2 <- lnRR_all %>% 
   select(starts_with("n"), author) %>% 
-  mutate(df = n_A + n_C - 2)
+  mutate(df = n_B + n_C - 2)
 
 calc6_CO2 <- left_join(calcCO2_4, sample_sizes_CO2)
 
@@ -311,17 +300,17 @@ eq7_B_CO2 <- eq7_T2_CO2 %>%
 se_CO2 <- (eq7_T1_CO2[[1]] * eq7_B_CO2[[1]])^0.5
 
 
-overall_interaction_calcification <- overall_interaction %>% 
+overall_interaction2 <- overall_interaction %>% 
   mutate(se_small_sample = NA) %>% 
   mutate(se_small_sample = ifelse(lnRR_type == "interaction", se_interaction[[1]], se_small_sample)) %>%
   mutate(se_small_sample = ifelse(lnRR_type == "overall_food", se_food[[1]], se_small_sample)) %>% 
   mutate(se_small_sample = ifelse(lnRR_type == "overall_CO2", se_CO2[[1]], se_small_sample)) 
 
-write_csv(overall_interaction_calcification, "data-processed/weighted_mean_calcification_main.csv")
+write_csv(overall_interaction2, "data-processed/weighted_mean_growth_main_reverse.csv")
 
 
-overall_interaction_calcification %>% 
+overall_interaction2 %>% 
   ggplot(aes(x = lnRR_type, y = T_weighted)) + geom_point() +
   geom_errorbar(aes(ymin = T_weighted - 1.96*se_small_sample, ymax = T_weighted + 1.96*se_small_sample), width = 0.1) +
   geom_hline(yintercept = 0) + theme_bw() + ylab("weighted mean lnRR") + xlab("lnRR type")
-ggsave("figures/weighted_mean_calcification_main.pdf")
+ggsave("figures/weighted_mean_growth_main_reverse.pdf")
