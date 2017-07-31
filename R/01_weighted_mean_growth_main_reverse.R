@@ -37,7 +37,7 @@ calc_ES_raw_growth %>%
 
 
 calc <- calc_ES_raw_growth %>% 
-  select(author, lnRR_interaction, sampling_variance_interaction) 
+  select(author_2, lnRR_interaction, sampling_variance_interaction) 
 
 ## ok let's get Q
 ## Q is sum(ES^2 *w_i) - (sum(ES*w_i)^2)/sum(w_i)
@@ -53,7 +53,7 @@ calc2 <- calc1 %>%
             C_term1 = sum(1/sampling_variance_interaction),
             C_term2 = sum((1/sampling_variance_interaction)^2)) 
 
-df <- 31 - 1
+df <- 19 - 1
 C <- calc2[["C_term1"]] - (calc2[["C_term1"]]/calc2[["C_term1"]])
 Q <- calc2[["Q"]]
 tau_sq <- (Q - df)/C
@@ -95,7 +95,7 @@ lnRR_all <- read_csv("data-processed/growth_main_lnRR_all_reverse.csv")
 
 
 calcCO2 <- lnRR_all %>% 
-  select(author, ends_with("CO2")) 
+  select(author_2, ends_with("CO2")) 
 
 
 
@@ -111,7 +111,7 @@ Q_CO2 <- calcCO2_2[[1]]
 
 ## Tau_sq is = 0 if Q < df (which is number of studies - 1), otherwise Tau_sq = (Q - df)/C, where C = sum(w) - sum(w^2)/sum(w)
 
-df <- 32 -1
+df <- 20 -1
 Tau_sq_CO2 <- (Q_CO2 - df)/(sum(calcCO2_1$term3) - (sum(calcCO2_1$term3 ^ 2)/sum(calcCO2_1$term3)))
 
 calcCO2_3 <- calcCO2_1 %>% 
@@ -146,7 +146,7 @@ conf_intervals_CO2_2 <- conf_intervals_CO2 %>%
 # now food overall effect -------------------------------------------------
 
 calcfood <- lnRR_all %>% 
-  select(author, ends_with("food")) 
+  select(author_2, ends_with("food")) 
 
 
 
@@ -210,7 +210,7 @@ eq7_T1 <- calcfood_4 %>%
 ## ok now we need the degrees of freedom in the individual studies!
 
 sample_sizes <- lnRR_all %>% 
-  select(starts_with("n"), author) %>% 
+  select(starts_with("n"), author_2) %>% 
   mutate(df = n_B + n_C - 2)
 
 calcfood_5 <- left_join(calcfood_4, sample_sizes)
@@ -246,7 +246,7 @@ eq7_T1_interaction <- calc5 %>%
 ## ok now we need the degrees of freedom in the individual studies!
 
 sample_sizes_interaction <- lnRR_all %>% 
-  select(starts_with("n"), author) %>% 
+  select(starts_with("n"), author_2) %>% 
   mutate(df = n_B + n_C - 2)
 
 calc6 <- left_join(calc5, sample_sizes_interaction)
@@ -277,7 +277,7 @@ eq7_T1_CO2 <- calcCO2_4 %>%
 ## ok now we need the degrees of freedom in the individual studies!
 
 sample_sizes_CO2 <- lnRR_all %>% 
-  select(starts_with("n"), author) %>% 
+  select(starts_with("n"), author_2) %>% 
   mutate(df = n_B + n_C - 2)
 
 calc6_CO2 <- left_join(calcCO2_4, sample_sizes_CO2)

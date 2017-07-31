@@ -9,33 +9,42 @@ growth <- read_csv("data-raw/growth_main.csv")
 ## now onto interactive effects
 
 gro1 <- growth %>% 
-  clean_names() 
+  clean_names() %>%
+  group_by(author_2, level, food_supply, co2_level) %>% 
+  summarise_each(funs(mean), mean_ambient, sd_ambient, n_ambient, mean_elevated, sd_elevated, n_elevated) 
 
-high <- gro1 %>% 
+high <- gro1 %>%
+  ungroup() %>% 
   filter(food_supply == "High") %>% 
   rename(mean_ambienthigh = mean_ambient) %>% 
   rename(sd_ambienthigh = sd_ambient) %>% 
   rename(n_ambienthigh = n_ambient) %>% 
   rename(mean_elevatedhigh = mean_elevated) %>% 
   rename(sd_elevatedhigh = sd_elevated) %>% 
-  rename(n_elevatedhigh = n_elevated) 
+  rename(n_elevatedhigh = n_elevated) %>% 
+  dplyr::select(author_2, 5:10, co2_level)
 
 low <- gro1 %>% 
+  ungroup() %>% 
   filter(food_supply == "Low") %>% 
   rename(mean_ambientlow = mean_ambient) %>% 
   rename(sd_ambientlow = sd_ambient) %>% 
   rename(n_ambientlow = n_ambient) %>% 
   rename(mean_elevatedlow = mean_elevated) %>% 
   rename(sd_elevatedlow = sd_elevated) %>% 
-  rename(n_elevatedlow = n_elevated) 
+  rename(n_elevatedlow = n_elevated) %>% 
+  dplyr::select(author_2, 5:10, co2_level)
 
-all <- left_join(high, low, by = "author")
+all <- left_join(high, low, by = c("author_2", "co2_level")) %>% 
+  distinct(author_2, co2_level, .keep_all = TRUE)
+
+intersect(low$author_2, high$author_2)
+
+
 
 ## ok now we have the right dataset, yay!!!
 wide_data <- all %>% 
-  dplyr::select(-starts_with("treatment"), -starts_with("study")) %>% 
-  filter(author != "Taylor-1") %>% 
-  filter(author != "Taylor-2")
+  dplyr::select(-starts_with("treatment"), -starts_with("study")) 
 
 
 ### ok here's how we get the interaction effect:

@@ -1,69 +1,65 @@
-Data_entry_person,Observation_ID,study,Paper_no,Author,DeltaCO2,Unit,Food.supply,Mean_Ambient,SE_Ambient,SD_Ambient,N_Ambient,Mean_Elevated,SE_Elevated,SD_Elevated,N_Elevated,,,,,
-Norah,1,1,1,Cole,769.65,shell length (um),Low,274.9513,2.0468,1.1817,3,274.9513,2.729,1.5756,3,,,,,
-Norah,2,2,1,Cole,769.65,shell length (um),High,292.6901,5.4581,3.1512,3,274.9513,4.7758,2.7573,3,,,,,
-Joey,23,15,7,Comeau,331.5,biomass (mg/cm2),Low,3.992958,0.492958,1.207495565,6,4.190141,0.788732,1.931990944,6,,,,,
-Joey,25,17,7,Comeau,331.5,biomass (mg/cm2),High,8.774648,0.985915,2.41498868,6,9.56338,2.267606,5.554477638,6,,,,,
-Joey,17,11,5,Crook-1,360,volume (mm3),Low,8.62069,1.293103,7.540021388,34,7.758621,0.862069,5.314150215,38,,,,,
-Joey,18,12,5,Crook-1,360,volume (mm3),High,81.03448,9.051724,43.4105433,23,78.87931,7.758621,37.20903917,23,,,,,
-Joey,19,11,5,Crook-2,810,volume (mm3),Low,8.62069,1.293103,7.540021388,34,8.189655,1.293103,6.963572768,29,,,,,
-Joey,20,12,5,Crook-2,810,volume (mm3),High,81.03448,9.051724,43.4105433,23,84.91379,5.603448,26.28250081,22,,,,,
-Joey,39,27,11,Drenkard-1,880,tissue lipid weight per spat (ug/mm2),Low,10.34483,0.344828,0.597259616,3,11.81034,2.5,4.330127019,3,,,,,
-Joey,73,39,11,Drenkard-2,880,septa diameter (um),Low,1385.96,26.32,45.58757726,3,1322,42.39,73.42163373,3,,,,,
-Joey,40,28,11,Drenkard-1,901,tissue lipid weight per spat (ug/mm2),High,13.27586,1.034483,1.791777116,3,12.67241,2.068966,3.583554231,3,,,,,
-Joey,74,40,11,Drenkard-2,901,septa diameter (um),High,2132,60.03,103.97501,3,2062,44.19,76.53932519,3,,,,,
-Norah,21,13,6,Edmunds,372.1,biomass (mg/cm2),Low,3.913043,0.56917,1.799873576,10,5.146245,0.142292,0.449966813,10,,,,,
-Norah,22,14,6,Edmunds,372.1,biomass (mg/cm2),High,6.047431,0.687747,2.174846974,10,5.667984,1.328063,4.199703956,10,,,,,
-Norah,7,7,3,Hettinger-1,555,total dry weight (ug/larva),Low,3.12294935,0.084724,0.19,5,2.921063328,0.290366602,0.649279461,5,,,,,
-Norah,58,32,3,Hettinger-2,555,shell growth (mm),Low,0.030982,0.004912,0.010983566,5,0.026702,0.002105,0.004706923,5,,,,,
-Norah,5,5,3,Hettinger-1,571,total dry weight (ug/larva),High,4.210178034,0.08467,0.19,5,3.8993252,0.0605,0.135282113,5,,,,,Used high temp as control as in paper
-Norah,57,31,3,Hettinger-2,571,shell growth (mm),High,0.034772,0.000912,0.002039294,5,0.031684,0.002035,0.004550398,5,,,,,
-Norah,41,29,12,Melzner-1,582.3,somatic mass growth (mg dry mass),Low,5,3.05,6.1,4,7,4.7,9.4,4,,,,,
-Norah,51,29,12,Melzner-2,582.3,length growth,Low,1.2,0.15,0.3,4,1.5,0.2,0.4,4,,,,,
-Kat,42,30,12,Melzner-1,651.3,somatic mass growth (mg dry mass),High,34.7,13.6,27.2,4,40.7,15.25,30.5,4,,,,,NB: should we use the metric dry weight here instead of size??
-Kat,52,30,12,Melzner-2,651.3,length growth,High,2.6,0.6,1.2,4,3,0.4,0.8,4,,,,,NB: should we use the metric dry weight here instead of size??
-Kat,43,29,12,Melzner-3,1766.6,somatic mass growth (mg dry mass),Low,5,3.05,6.1,4,17.4,8.05,16.1,4,,,,,NB: should we use the metric dry weight here instead of size??
-Kat,53,29,12,Melzner-4,1766.6,length growth,Low,1.2,0.15,0.3,4,1.1,0.15,0.3,4,,,,,NB: should we use the metric dry weight here instead of size??
-Kat,44,30,12,Melzner-3,2062.6,somatic mass growth (mg dry mass),High,34.7,13.6,27.2,4,29.8,7.4,14.8,4,,,,,NB: should we use the metric dry weight here instead of size??
-Kat,54,30,12,Melzner-4,2062.6,length growth,High,2.6,0.6,1.2,4,2.5,0.2,0.4,4,,,,,NB: should we use the metric dry weight here instead of size??
-Kat,46,30,12,Melzner-5,3385.1,somatic mass growth (mg dry mass),High,34.7,13.6,27.2,4,36.5,6.05,12.1,4,,,,,NB: should we use the metric dry weight here instead of size??
-Kat,56,30,12,Melzner-6,3385.1,length growth,High,2.6,0.6,1.2,4,1.8,0.25,0.5,4,,,,,NB: should we use the metric dry weight here instead of size??
-Kat,45,29,12,Melzner-5,3414.8,somatic mass growth (mg dry mass),Low,5,3.05,6.1,4,8.5,8.6,17.2,4,,,,,
-Kat,55,29,12,Melzner-6,3414.8,length growth,Low,1.2,0.15,0.3,4,0.6,0.1,0.2,4,,,,,
-Kat,3,3,2,Pan,368.7,body length (um),Low,240.41,11.58,81.91,50,237.297,11.58,81.907714,50,,,,,
-Kat,4,4,2,Pan,368.7,body length (um),High,336.98166,11.58,81.91,50,339.27267,11.58,81.907714,50,,,,,
-Norah,60,34,8,Pansch-1,482.5,size- Kiel (mm),High,12.85714286,0.457658146,1.294452715,8,12.79734,0.305105612,0.86296899,8,,,,,
-Norah,59,33,8,Pansch-1,496.1,size- Kiel (mm),Low,8.372093,0.213573802,0.604077933,8,8.491694,0.274594898,0.776671658,8,,,,,
-Norah,33,21,8,Pansch-2,507.3,dry weight - Tjarno (mg),High,0.048478,0.006633673,0.016249115,6,0.051015,0.003883163,0.009511769,6,,,,,
-Norah,64,36,8,Pansch-3,507.3,size- Tjarno(mm),High,3.641196013,0.149162655,0.365372394,6,3.800664452,0.176283138,0.431803738,6,,,,,
-Norah,32,20,8,Pansch-2,615.3,dry weight - Tjarno (mg),Low,0.016342,0.003182143,0.007794626,6,0.019937,0.004153061,0.010172881,6,,,,,
-Norah,63,35,8,Pansch-3,615.3,size- Tjarno(mm),Low,2.976744186,0.230524104,0.564666427,6,2.897009967,0.284765069,0.697529115,6,,,,,
-Norah,26,18,8,Pansch-4,2236.8,dry weight - Kiel (mg),Low,0.062614652,0.004302887,0.012170402,8,0.063886596,0.00676168,0.019124918,8,,,,,
-Norah,61,33,8,Pansch-5,2236.8,size- Kiel (mm),Low,8.372093,0.213573802,0.604077933,8,8.431894,0.183063259,0.517781086,8,,,,,
-Kat,27,19,8,Pansch-4,2251,dry weight - Kiel (mg),High,0.233831708,0.036882814,0.104320351,8,0.239926514,0.016596849,0.046942979,8,,,,,
-Kat,62,34,8,Pansch-5,2251,size- Kiel (mm),High,12.85714286,0.457658146,1.294452715,8,12.91694352,0.366126517,1.035562171,8,,,,,
-Kat,31,21,8,Pansch-6,2567.8,dry weight - Tjarno (mg),High,0.048478,0.006633673,0.016249115,6,0.044249,0.003613265,0.008850656,6,,,,,
-Kat,66,36,8,Pansch-7,2567.8,size- Tjarno(mm),High,3.641196013,0.149162655,0.365372394,6,3.61461794,0.230524104,0.564666427,6,,,,,
-Norah,30,20,8,Pansch-6,2729.5,dry weight - Tjarno (mg),Low,0.016342,0.003182143,0.007794626,6,0.013277,0.00377551,0.009248074,6,,,,,
-Norah,65,35,8,Pansch-7,2729.5,size- Tjarno(mm),Low,2.976744186,0.230524104,0.564666427,6,2.976744186,0.433927724,1.062901509,6,,,,,
-Norah,29,19,8,Pansch-8,482.5,dry weight - Kiel (mg),High,0.233831708,0.036882814,0.104320351,8,0.253144931,0.010757217,0.030426005,8,,,,,
-Norah,28,18,8,Pansch-8,496.1,dry weight - Kiel (mg),Low,0.062614652,0.004302887,0.012170402,8,0.066261737,0.005840558,0.016519593,8,,,,,
-Norah,34,22,9,Ramajo,899,growth (mm d-1),Low,0.009295,0.002306,0.003994109,3,0.016656,0.00408,0.007066767,3,,,,,
-Norah,36,24,9,Ramajo,967,growth (mm d-1),High,0.016055,0.003282,0.005684591,3,0.03335,0.003459,0.005991164,3,,,,,
-Kat,47,31,13,Taylor-1,559.8,% Change width 140 days,High,4.230769,1.282051,4.965362172,15,6.153846,2.350427,9.103164627,15,,,,,
-Kat,49,32,13,Taylor-1,559.8,% Change width 140 days,Low,-7.73504,5.128205,19.86145256,15,-0.89744,0.42735,1.655119433,15,,,,,
-Kat,48,31,13,Taylor-2,2606.7,% Change width 140 days,High,4.230769,1.282051,4.965362172,15,0.598291,1.068376,4.137802455,15,,,,,NB: should we use the metric dry weight here instead of size??
-Kat,50,32,13,Taylor-2,2606.7,% Change width 140 days,Low,-7.73504,5.128205,19.86145256,15,-2.82051,0.854701,3.310242739,15,,,,,NB: should we use the metric dry weight here instead of size??
-Kat,8,8,4,Thomsen-1,740,shell length (um),Low,1422.22,134.3852684,355.55,7,1806,142.4926063,377,7,,,,,NB: should we use the metric dry weight here instead of size??
-Kat,10,10,4,Thomsen-1,740,shell length (um),High,3875,250.9684101,664,7,3342,215.137378,569.2,7,,,,,NB: should we use the metric dry weight here instead of size??
-Kat,11,8,4,Thomsen-2,2020,shell length (um),Low,1422.22,134.3852684,355.55,7,1464.8,99.55584219,263.4,7,,,,,NB: should we use the metric dry weight here instead of size??
-Kat,13,10,4,Thomsen-2,2020,shell length (um),High,3875,250.9684101,664,7,3471.4,238.457786,630.9,7,,,,,NB: should we use the metric dry weight here instead of size??
-Kat,14,8,4,Thomsen-3,3620,shell length (um),Low,1422.22,134.3852684,355.55,7,1300.6,28.23394613,74.7,7,,,,,NB: should we use the metric dry weight here instead of size??
-Kat,16,10,4,Thomsen-3,3620,shell length (um),High,3875,250.9684101,664,7,3379.5,256.0709305,677.5,7,,,,,NB: should we use the metric dry weight here instead of size??
-Joey,8,8,4,Thomsen-4,740,organic mass (mg),Low,0.062676,3.78E-05,0.0001,7,0.105749293,3.78E-05,0.0001,7,,,,,
-Joey,10,10,4,Thomsen-4,740,organic mass (mg),High,0.708953817,0.102737925,0.271819,7,0.557775,0.110076361,0.291234677,7,,,,,
-Joey,11,8,4,Thomsen-5,2020,organic mass (mg),Low,0.062676,3.78E-05,0.0001,7,0.090386428,3.78E-05,0.0001,7,,,,,
-Joey,13,10,4,Thomsen-5,2020,organic mass (mg),High,0.708953817,0.102737925,0.271819,7,0.639679548,0.132091637,0.349481621,7,,,,,
-Joey,14,8,4,Thomsen-6,3620,organic mass (mg),Low,0.062676,3.78E-05,0.0001,7,0.09462771,3.78E-05,0.0001,7,,,,,
-Joey,16,10,4,Thomsen-6,3620,organic mass (mg),High,0.708953817,0.102737925,0.271819,7,0.585579642,0.099068728,0.262111216,7,,,,,
-Norah,37,25,10,Towle,409,growth (mg cm-2 d-1),Low,1.380822,0.086301,0.272907724,10,1.006849,0.09589,0.303230805,10,,,,,
-Norah,38,26,10,Towle,409,growth (mg cm-2 d-1),High,1.300913,0.099087,0.313340607,10,1.32968,0.089498,0.283017526,10,,,,,
+Data_entry_person,Observation_ID,study,Paper_no,Author,Author-2,level,co2_level,DeltaCO2,Food.supply,Unit,Mean_Ambient,SE_Ambient,SD_Ambient,N_Ambient,Mean_Elevated,SE_Elevated,SD_Elevated,N_Elevated,,,,,
+Norah,2,2,1,Cole,Cole,2,1,769.65,High,shell length (um),292.6901,5.4581,3.1512,3,274.9513,4.7758,2.7573,3,,,,,
+Norah,1,1,1,Cole,Cole,1,1,769.65,Low,shell length (um),274.9513,2.0468,1.1817,3,274.9513,2.729,1.5756,3,,,,,
+Joey,25,17,7,Comeau,Comeau,2,1,331.5,High,biomass (mg/cm2),8.774648,0.985915,2.41498868,6,9.56338,2.267606,5.554477638,6,,,,,
+Joey,23,15,7,Comeau,Comeau,1,1,331.5,Low,biomass (mg/cm2),3.992958,0.492958,1.207495565,6,4.190141,0.788732,1.931990944,6,,,,,
+Joey,18,12,5,Crook-1,Crook,2,1,360,High,volume (mm3),81.03448,9.051724,43.4105433,23,78.87931,7.758621,37.20903917,23,,,,,
+Joey,17,11,5,Crook-1,Crook,1,1,360,Low,volume (mm3),8.62069,1.293103,7.540021388,34,7.758621,0.862069,5.314150215,38,,,,,
+Joey,20,12,5,Crook-2,Crook,2,2,810,High,volume (mm3),81.03448,9.051724,43.4105433,23,84.91379,5.603448,26.28250081,22,,,,,
+Joey,19,11,5,Crook-2,Crook,1,2,810,Low,volume (mm3),8.62069,1.293103,7.540021388,34,8.189655,1.293103,6.963572768,29,,,,,
+Joey,39,27,11,Drenkard-1,Drenkard,1,1,880,Low,tissue lipid weight per spat (ug/mm2),10.34483,0.344828,0.597259616,3,11.81034,2.5,4.330127019,3,,,,,
+Joey,40,28,11,Drenkard-1,Drenkard,2,1,901,High,tissue lipid weight per spat (ug/mm2),13.27586,1.034483,1.791777116,3,12.67241,2.068966,3.583554231,3,,,,,
+Joey,73,39,11,Drenkard-2,Drenkard,1,1,880,Low,septa diameter (um),1385.96,26.32,45.58757726,3,1322,42.39,73.42163373,3,,,,,
+Joey,74,40,11,Drenkard-2,Drenkard,2,1,901,High,septa diameter (um),2132,60.03,103.97501,3,2062,44.19,76.53932519,3,,,,,
+Norah,22,14,6,Edmunds,Edmunds,2,1,372.1,High,biomass (mg/cm2),6.047431,0.687747,2.174846974,10,5.667984,1.328063,4.199703956,10,,,,,
+Norah,21,13,6,Edmunds,Edmunds,1,1,372.1,Low,biomass (mg/cm2),3.913043,0.56917,1.799873576,10,5.146245,0.142292,0.449966813,10,,,,,
+Norah,7,7,3,Hettinger-1,Hettinger,1,1,555,Low,total dry weight (ug/larva),3.12294935,0.084724,0.19,5,2.921063328,0.290366602,0.649279461,5,,,,,
+Norah,5,5,3,Hettinger-1,Hettinger,2,1,571,High,total dry weight (ug/larva),4.210178034,0.08467,0.19,5,3.8993252,0.0605,0.135282113,5,,,,,Used high temp as control as in paper
+Norah,58,32,3,Hettinger-2,Hettinger,1,1,555,Low,shell growth (mm),0.030982,0.004912,0.010983566,5,0.026702,0.002105,0.004706923,5,,,,,
+Norah,57,31,3,Hettinger-2,Hettinger,2,1,571,High,shell growth (mm),0.034772,0.000912,0.002039294,5,0.031684,0.002035,0.004550398,5,,,,,
+Norah,41,29,12,Melzner-1,Melzner,1,1,582.3,Low,somatic mass growth (mg dry mass),5,3.05,6.1,4,7,4.7,9.4,4,,,,,
+Kat,42,30,12,Melzner-1,Melzner,2,1,651.3,High,somatic mass growth (mg dry mass),34.7,13.6,27.2,4,40.7,15.25,30.5,4,,,,,NB: should we use the metric dry weight here instead of size??
+Norah,51,29,12,Melzner-2,Melzner,1,1,582.3,Low,length growth,1.2,0.15,0.3,4,1.5,0.2,0.4,4,,,,,
+Kat,52,30,12,Melzner-2,Melzner,2,1,651.3,High,length growth,2.6,0.6,1.2,4,3,0.4,0.8,4,,,,,NB: should we use the metric dry weight here instead of size??
+Kat,43,29,12,Melzner-3,Melzner,3,2,1766.6,Low,somatic mass growth (mg dry mass),5,3.05,6.1,4,17.4,8.05,16.1,4,,,,,NB: should we use the metric dry weight here instead of size??
+Kat,44,30,12,Melzner-3,Melzner,4,2,2062.6,High,somatic mass growth (mg dry mass),34.7,13.6,27.2,4,29.8,7.4,14.8,4,,,,,NB: should we use the metric dry weight here instead of size??
+Kat,53,29,12,Melzner-4,Melzner,3,2,1766.6,Low,length growth,1.2,0.15,0.3,4,1.1,0.15,0.3,4,,,,,NB: should we use the metric dry weight here instead of size??
+Kat,54,30,12,Melzner-4,Melzner,4,2,2062.6,High,length growth,2.6,0.6,1.2,4,2.5,0.2,0.4,4,,,,,NB: should we use the metric dry weight here instead of size??
+Kat,46,30,12,Melzner-5,Melzner,5,3,3385.1,High,somatic mass growth (mg dry mass),34.7,13.6,27.2,4,36.5,6.05,12.1,4,,,,,NB: should we use the metric dry weight here instead of size??
+Kat,45,29,12,Melzner-5,Melzner,6,3,3414.8,Low,somatic mass growth (mg dry mass),5,3.05,6.1,4,8.5,8.6,17.2,4,,,,,
+Kat,56,30,12,Melzner-6,Melzner,5,3,3385.1,High,length growth,2.6,0.6,1.2,4,1.8,0.25,0.5,4,,,,,NB: should we use the metric dry weight here instead of size??
+Kat,55,29,12,Melzner-6,Melzner,6,3,3414.8,Low,length growth,1.2,0.15,0.3,4,0.6,0.1,0.2,4,,,,,
+Kat,4,4,2,Pan,Pan,2,1,368.7,High,body length (um),336.98166,11.58,81.91,50,339.27267,11.58,81.907714,50,,,,,
+Kat,3,3,2,Pan,Pan,1,1,368.7,Low,body length (um),240.41,11.58,81.91,50,237.297,11.58,81.907714,50,,,,,
+Norah,60,34,8,Pansch-1,Pansch-Kiel,1,1,482.5,High,size- Kiel (mm),12.85714286,0.457658146,1.294452715,8,12.79734,0.305105612,0.86296899,8,,,,,
+Norah,59,33,8,Pansch-1,Pansch-Kiel,2,1,496.1,Low,size- Kiel (mm),8.372093,0.213573802,0.604077933,8,8.491694,0.274594898,0.776671658,8,,,,,
+Norah,33,21,8,Pansch-2,Pansch-Tjarno,3,1,507.3,High,dry weight - Tjarno (mg),0.048478,0.006633673,0.016249115,6,0.051015,0.003883163,0.009511769,6,,,,,
+Norah,32,20,8,Pansch-2,Pansch-Tjarno,4,1,615.3,Low,dry weight - Tjarno (mg),0.016342,0.003182143,0.007794626,6,0.019937,0.004153061,0.010172881,6,,,,,
+Norah,64,36,8,Pansch-3,Pansch-Tjarno,3,1,507.3,High,size- Tjarno(mm),3.641196013,0.149162655,0.365372394,6,3.800664452,0.176283138,0.431803738,6,,,,,
+Norah,63,35,8,Pansch-3,Pansch-Tjarno,4,1,615.3,Low,size- Tjarno(mm),2.976744186,0.230524104,0.564666427,6,2.897009967,0.284765069,0.697529115,6,,,,,
+Norah,26,18,8,Pansch-4,Pansch-Kiel,5,2,2236.8,Low,dry weight - Kiel (mg),0.062614652,0.004302887,0.012170402,8,0.063886596,0.00676168,0.019124918,8,,,,,
+Kat,27,19,8,Pansch-4,Pansch-Kiel,6,2,2251,High,dry weight - Kiel (mg),0.233831708,0.036882814,0.104320351,8,0.239926514,0.016596849,0.046942979,8,,,,,
+Norah,61,33,8,Pansch-5,Pansch-Kiel,5,2,2236.8,Low,size- Kiel (mm),8.372093,0.213573802,0.604077933,8,8.431894,0.183063259,0.517781086,8,,,,,
+Kat,62,34,8,Pansch-5,Pansch-Kiel,6,2,2251,High,size- Kiel (mm),12.85714286,0.457658146,1.294452715,8,12.91694352,0.366126517,1.035562171,8,,,,,
+Kat,31,21,8,Pansch-6,Pansch-Tjarno,7,3,2567.8,High,dry weight - Tjarno (mg),0.048478,0.006633673,0.016249115,6,0.044249,0.003613265,0.008850656,6,,,,,
+Norah,30,20,8,Pansch-6,Pansch-Tjarno,8,3,2729.5,Low,dry weight - Tjarno (mg),0.016342,0.003182143,0.007794626,6,0.013277,0.00377551,0.009248074,6,,,,,
+Kat,66,36,8,Pansch-7,Pansch-Tjarno,7,3,2567.8,High,size- Tjarno(mm),3.641196013,0.149162655,0.365372394,6,3.61461794,0.230524104,0.564666427,6,,,,,
+Norah,65,35,8,Pansch-7,Pansch-Tjarno,8,3,2729.5,Low,size- Tjarno(mm),2.976744186,0.230524104,0.564666427,6,2.976744186,0.433927724,1.062901509,6,,,,,
+Norah,29,19,8,Pansch-8,Pansch-Kiel,1,1,482.5,High,dry weight - Kiel (mg),0.233831708,0.036882814,0.104320351,8,0.253144931,0.010757217,0.030426005,8,,,,,
+Norah,28,18,8,Pansch-8,Pansch-Kiel,2,1,496.1,Low,dry weight - Kiel (mg),0.062614652,0.004302887,0.012170402,8,0.066261737,0.005840558,0.016519593,8,,,,,
+Norah,34,22,9,Ramajo,Ramajo,1,1,899,Low,growth (mm d-1),0.009295,0.002306,0.003994109,3,0.016656,0.00408,0.007066767,3,,,,,
+Norah,36,24,9,Ramajo,Ramajo,2,1,967,High,growth (mm d-1),0.016055,0.003282,0.005684591,3,0.03335,0.003459,0.005991164,3,,,,,
+Kat,10,10,4,Thomsen-1,Thomsen,1,1,740,High,shell length (um),3875,250.9684101,664,7,3342,215.137378,569.2,7,,,,,NB: should we use the metric dry weight here instead of size??
+Kat,8,8,4,Thomsen-1,Thomsen,2,1,740,Low,shell length (um),1422.22,134.3852684,355.55,7,1806,142.4926063,377,7,,,,,NB: should we use the metric dry weight here instead of size??
+Kat,13,10,4,Thomsen-2,Thomsen,3,2,2020,High,shell length (um),3875,250.9684101,664,7,3471.4,238.457786,630.9,7,,,,,NB: should we use the metric dry weight here instead of size??
+Kat,11,8,4,Thomsen-2,Thomsen,4,2,2020,Low,shell length (um),1422.22,134.3852684,355.55,7,1464.8,99.55584219,263.4,7,,,,,NB: should we use the metric dry weight here instead of size??
+Kat,16,10,4,Thomsen-3,Thomsen,5,3,3620,High,shell length (um),3875,250.9684101,664,7,3379.5,256.0709305,677.5,7,,,,,NB: should we use the metric dry weight here instead of size??
+Kat,14,8,4,Thomsen-3,Thomsen,6,3,3620,Low,shell length (um),1422.22,134.3852684,355.55,7,1300.6,28.23394613,74.7,7,,,,,NB: should we use the metric dry weight here instead of size??
+Joey,10,10,4,Thomsen-4,Thomsen,1,1,740,High,organic mass (mg),0.708953817,0.102737925,0.271819,7,0.557775,0.110076361,0.291234677,7,,,,,
+Joey,8,8,4,Thomsen-4,Thomsen,2,1,740,Low,organic mass (mg),0.062676,3.78E-05,0.0001,7,0.105749293,3.78E-05,0.0001,7,,,,,
+Joey,13,10,4,Thomsen-5,Thomsen,3,2,2020,High,organic mass (mg),0.708953817,0.102737925,0.271819,7,0.639679548,0.132091637,0.349481621,7,,,,,
+Joey,11,8,4,Thomsen-5,Thomsen,4,2,2020,Low,organic mass (mg),0.062676,3.78E-05,0.0001,7,0.090386428,3.78E-05,0.0001,7,,,,,
+Joey,16,10,4,Thomsen-6,Thomsen,5,3,3620,High,organic mass (mg),0.708953817,0.102737925,0.271819,7,0.585579642,0.099068728,0.262111216,7,,,,,
+Joey,14,8,4,Thomsen-6,Thomsen,6,3,3620,Low,organic mass (mg),0.062676,3.78E-05,0.0001,7,0.09462771,3.78E-05,0.0001,7,,,,,
+Norah,38,26,10,Towle,Towle,1,1,409,High,growth (mg cm-2 d-1),1.300913,0.099087,0.313340607,10,1.32968,0.089498,0.283017526,10,,,,,
+Norah,37,25,10,Towle,Towle,2,1,409,Low,growth (mg cm-2 d-1),1.380822,0.086301,0.272907724,10,1.006849,0.09589,0.303230805,10,,,,,
