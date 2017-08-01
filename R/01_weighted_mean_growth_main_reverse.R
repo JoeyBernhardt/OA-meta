@@ -29,7 +29,7 @@ library(ggplot2)
 
 # interactive effects -----------------------------------------------------
 
-calc_ES_raw_growth <- read_csv("data-processed/growth_main_lnRR_all_reverse.csv")
+calc_ES_raw_growth <- read_csv("data-processed/growth_main_lnRR_all_reverse_august.csv")
 
 calc_ES_raw_growth %>% 
   ggplot(aes(x = author, y = lnRR_overall_CO2)) + geom_point() +

@@ -4,7 +4,7 @@ library(readr)
 library(janitor)
 
 
-growth <- read_csv("data-raw/growth_main.csv")
+growth <- read_csv("data-raw/growth_main_august_2017.csv")
 
 ## now onto interactive effects
 
@@ -100,4 +100,4 @@ lnRR_all <- wide4 %>%
                                                                   (s_AB^2/n_AB))) + (((1/(C + A))^2) *
                                                                                        ((s_C^2/n_C) + (s_A^2)/n_A))))
 
-write_csv(lnRR_all, "data-processed/growth_main_lnRR_all_reverse.csv")
+write_csv(lnRR_all, "data-processed/growth_main_lnRR_all_reverse_august.csv")

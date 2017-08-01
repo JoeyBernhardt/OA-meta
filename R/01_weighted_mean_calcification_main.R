@@ -324,4 +324,4 @@ overall_interaction_calcification %>%
   ggplot(aes(x = lnRR_type, y = T_weighted)) + geom_point() +
   geom_errorbar(aes(ymin = T_weighted - 1.96*se_small_sample, ymax = T_weighted + 1.96*se_small_sample), width = 0.1) +
   geom_hline(yintercept = 0) + theme_bw() + ylab("weighted mean lnRR") + xlab("lnRR type")
-ggsave("figures/weighted_mean_calcification_main.pdf")
+ggsave("figures/weighted_mean_calcification_main_reverse.pdf")
