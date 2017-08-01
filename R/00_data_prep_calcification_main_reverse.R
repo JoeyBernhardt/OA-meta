@@ -6,7 +6,7 @@ library(readr)
 library(janitor)
 
 
-calcification <- read_csv("data-raw/calcification_main.csv")
+calcification <- read_csv("data-raw/calcification_main_august.csv")
 
 ## now onto interactive effects
 
@@ -86,4 +86,4 @@ lnRR_all <- wide4 %>%
                                                                   (s_AB^2/n_AB))) + (((1/(C + A))^2) *
                                                                                        ((s_C^2/n_C) + (s_A^2)/n_A))))
 
-write_csv(lnRR_all, "data-processed/calcification_main_lnRR_all_reverse.csv")
+write_csv(lnRR_all, "data-processed/calcification_main_lnRR_all_reverse_august.csv")

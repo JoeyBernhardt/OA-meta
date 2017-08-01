@@ -99,5 +99,4 @@ lnRR_all <- wide4 %>%
   mutate(sampling_variance_overall_food = (((1/((B + AB))^2) * ((s_B^2/n_B) +
                                                                   (s_AB^2/n_AB))) + (((1/(C + A))^2) *
                                                                                        ((s_C^2/n_C) + (s_A^2)/n_A))))
-
 write_csv(lnRR_all, "data-processed/growth_main_lnRR_all_reverse_august.csv")
